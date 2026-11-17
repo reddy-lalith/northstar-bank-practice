@@ -1,0 +1,19 @@
+{
+  "name": "northstar-bank",
+  "version": "1.4.0",
+  "private": true,
+  "description": "Northstar Bank customer web app: accounts, transfers, virtual cards, rewards and bill pay.",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,green \"npm run dev -w server\" \"npm run dev -w web\"",
+    "test": "npm test -w server",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w web",
+    "build": "npm run build -w web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
